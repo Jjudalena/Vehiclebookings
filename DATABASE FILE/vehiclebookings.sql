@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 17, 2024 at 02:09 AM
+-- Generation Time: Jan 24, 2024 at 06:00 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.0.32
 
@@ -109,13 +109,11 @@ CREATE TABLE `tms_user` (
   `u_fname` varchar(200) NOT NULL,
   `u_lname` varchar(200) NOT NULL,
   `u_phone` varchar(200) NOT NULL,
-  `u_addr` varchar(200) NOT NULL,
-  `u_category` varchar(200) NOT NULL,
   `u_email` varchar(200) NOT NULL,
   `u_pwd` varchar(20) NOT NULL,
   `u_car_type` varchar(200) NOT NULL,
   `u_car_regno` varchar(200) NOT NULL,
-  `u_car_bookdate` varchar(200) NOT NULL,
+  `u_car_bookdate` int(200) NOT NULL,
   `u_dest` varchar(200) NOT NULL,
   `u_purp` varchar(200) NOT NULL,
   `u_dept` varchar(200) NOT NULL,
@@ -127,11 +125,10 @@ CREATE TABLE `tms_user` (
 -- Dumping data for table `tms_user`
 --
 
-INSERT INTO `tms_user` (`u_id`, `u_fname`, `u_lname`, `u_phone`, `u_addr`, `u_category`, `u_email`, `u_pwd`, `u_car_type`, `u_car_regno`, `u_car_bookdate`, `u_dest`, `u_purp`, `u_dept`, `u_course`, `u_car_book_status`) VALUES
-(13, 'John Jefferson', 'Judalena', '09650393151', 'Zone 3, Guisao Zamboanga City', 'User', 'John@gmail.com', '123', 'Honda', 'JR-8281', '', '', '', '', '', 'Approved'),
-(14, 'some', 'thing', '23+54389', 'Zone 3, Guisao Zamboanga City', 'User', 'paul@gmail.com', '123', 'Bus', 'CA7766', '2024-01-01', '', '', '', '', 'Approved'),
-(15, 'some', 'thing', '099999999999', 'Zone 3, Guisao Zamboanga City', 'User', 'paul@gmail.com', '111', '', '', '', '', '', '', '', ''),
-(16, 'Some', 'Thing', '099999999999', 'Zone 3, Guisao Zamboanga City', 'Driver', 'Some@gmail.com', '123', '', '', '', '', '', '', '', '');
+INSERT INTO `tms_user` (`u_id`, `u_fname`, `u_lname`, `u_phone`, `u_email`, `u_pwd`, `u_car_type`, `u_car_regno`, `u_car_bookdate`, `u_dest`, `u_purp`, `u_dept`, `u_course`, `u_car_book_status`) VALUES
+(13, 'John Jefferson', 'Judalena', '09650393151', 'John@gmail.com', '123', 'Honda', 'JR-8281', 0, '', '', '', '', 'Approved'),
+(14, 'some', 'thing', '23+54389', 'paul@gmail.com', '123', 'Bus', 'CA7766', 2024, '', '', '', '', 'Approved'),
+(15, 'some', 'thing', '099999999999', 'paul@gmail.com', '111', 'Motorcycle', 'JR-8281', 0, '', '', '', '', 'Pending');
 
 -- --------------------------------------------------------
 
@@ -243,7 +240,7 @@ ALTER TABLE `tms_syslogs`
 -- AUTO_INCREMENT for table `tms_user`
 --
 ALTER TABLE `tms_user`
-  MODIFY `u_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `u_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `tms_vehicle`

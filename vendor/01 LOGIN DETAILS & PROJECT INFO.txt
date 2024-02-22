@@ -9,6 +9,6 @@
 
 **Admin Login Details**
 
-Email	: admin@mail.com
-Password: codeastro.com
+Email	: admin@gmail.com
+Password: 123
 

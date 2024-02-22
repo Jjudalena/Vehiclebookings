@@ -20,9 +20,10 @@
             $u_dest = $_POST['u_dest'];
             $u_dept = $_POST['u_dept'];
             $u_car_book_status  = $_POST['u_car_book_status'];
-            $query = "UPDATE tms_users SET u_car_type=?, u_car_bookdate=?, u_car_regno=?, u_car_book_status=?, u_purp=?, u_course=?, u_dest=?, u_dept=? WHERE u_id=?";
+            $query = "UPDATE tms_user SET u_car_type=?, u_car_bookdate=?, u_car_regno=?, u_car_book_status=?, u_purp=?, u_course=?, u_dest=?, u_dept=? WHERE u_id=?";
             $stmt = $mysqli->prepare($query);
-            $rc = $stmt->bind_param('ssssi', $u_car_type, $u_car_bookdate, $u_car_regno, $u_car_book_status, $u_purp, $u_course, $u_dest, $u_dept, $u_id);
+            $src= $stmt->bind_param('sissssssi', $u_car_type, $u_car_bookdate, $u_car_regno, $u_car_book_status, $u_purp, $u_course, $u_dest, $u_dept, $u_id);
+
             $stmt->execute();
                 if($stmt)
                 {
@@ -108,7 +109,7 @@
                 <input type="text" value="<?php echo $row->v_category;?>" readonly class="form-control" name="u_car_type">
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail1">Vehicle Registration Number</label>
+                <label for="exampleInputEmail1">Vehicle Plate Number</label>
                 <input type="email" value="<?php echo $row->v_reg_no;?>" readonly class="form-control" name="u_car_regno">
             </div>
             <div class="form-group">
