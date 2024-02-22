@@ -109,11 +109,6 @@
                 <label for="exampleInputEmail1">Contact</label>
                 <input type="text" class="form-control" value="<?php echo $row->u_phone;?>" id="exampleInputEmail1" name="u_phone">
             </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Address</label>
-                <input type="text" class="form-control" value="<?php echo $row->u_addr;?>" id="exampleInputEmail1" name="u_addr">
-            </div>
-
             <div class="form-group" style="display:none">
                 <label for="exampleInputEmail1">Category</label>
                 <input type="text" class="form-control" id="exampleInputEmail1" value="User" name="u_category">
@@ -143,7 +138,7 @@
               <select class="form-control" name="u_car_regno" id="exampleFormControlSelect1">
                 <?php
 
-                $ret="SELECT * FROM tms_vehicle  "; //sql code to get to all vehicles
+                $ret="SELECT * FROM tms_vehicles  "; //sql code to get to all vehicles
                 $stmt= $mysqli->prepare($ret) ;
                 $stmt->execute() ;//ok
                 $res=$stmt->get_result();
@@ -180,10 +175,6 @@
        
       <hr>
      
-
-      <!-- Sticky Footer -->
-      <?php include("vendor/inc/footer.php");?>
-
     </div>
     <!-- /.content-wrapper -->
 

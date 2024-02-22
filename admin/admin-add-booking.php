@@ -29,7 +29,7 @@
           <li class="breadcrumb-item">
             <a href="#">User</a>
           </li>
-          <li class="breadcrumb-item active">Add Booking</li>
+          <li class="breadcrumb-item active">Add Reservation</li>
         </ol>
 
         <!-- DataTables Example -->
@@ -45,14 +45,13 @@
                     <th>#</th>
                     <th>Name</th>
                     <th>Contact</th>
-                    <th>Address</th>
                     <th>Email</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <?php
 
-                    $ret="SELECT * FROM tms_user where u_category= 'User'"; //sql code to get to ten trains randomly
+                    $ret="SELECT * FROM tms_user"; //sql code to get to ten trains randomly
                     $stmt= $mysqli->prepare($ret) ;
                     $stmt->execute() ;//ok
                     $res=$stmt->get_result();
@@ -65,7 +64,6 @@
                     <td><?php echo $cnt;?></td>
                     <td><?php echo $row->u_fname;?> <?php echo $row->u_lname;?></td>
                     <td><?php echo $row->u_phone;?></td>
-                    <td><?php echo $row->u_addr;?></td>
                     <td><?php echo $row->u_email;?></td>
                     <td>
                       <a href="admin-add-booking-usr.php?u_id=<?php echo $row->u_id;?>" class="badge badge-success">
@@ -86,8 +84,6 @@
       </div>
       <!-- /.container-fluid -->
 
-      <!-- Sticky Footer -->
-      <?php include("vendor/inc/footer.php");?>
     </div>
     <!-- /.content-wrapper -->
 

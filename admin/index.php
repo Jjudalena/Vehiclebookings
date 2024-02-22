@@ -38,7 +38,7 @@
   <meta name="description" content="Vehicle Booking System Transport Saccos, Matatu Industry">
   <meta name="author" content="MartDevelopers">
 
-  <title>Ride Ready Ateneo Vehicle Resersvation System - Admin Login</title>
+  <title>Ride Ready Ateneo Vehicle Resersvation - Admin Login</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

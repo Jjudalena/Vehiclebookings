@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="admin-dashboard.php">Vehicle Booking System</a>
+    <a class="navbar-brand mr-1" href="admin-dashboard.php"> Ride Ready Ateneo Vehicle Reservation System</a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>

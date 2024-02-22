@@ -7,18 +7,23 @@
   //Add USer
   if(isset($_POST['add_user']))
     {
-
-            $u_fname=$_POST['u_fname'];
+    
+      // Retrieve POST data
+            $u_fname = $_POST['u_fname'];
             $u_lname = $_POST['u_lname'];
-            $u_phone=$_POST['u_phone'];
-            $u_addr=$_POST['u_addr'];
-            $u_email=$_POST['u_email'];
-            $u_pwd=$_POST['u_pwd'];
-            $u_category=$_POST['u_category'];
-            $query="insert into tms_user (u_fname, u_lname, u_phone, u_addr, u_category, u_email, u_pwd) values(?,?,?,?,?,?,?)";
-            $stmt = $mysqli->prepare($query);
-            $rc=$stmt->bind_param('sssssss', $u_fname,  $u_lname, $u_phone, $u_addr, $u_category, $u_email, $u_pwd);
-            $stmt->execute();
+            $u_address = $_POST['u_address'];
+            $u_phone = $_POST['u_phone'];
+            $u_email = $_POST['u_email'];
+            $u_pwd = $_POST['u_pwd'];
+// Prepare the SQL query
+$query = "INSERT INTO tms_user ( u_fname, u_lname, u_address, u_phone, u_email, u_pwd) VALUES ( ?, ?, ?, ?, ?, ?)";
+$stmt = $mysqli->prepare($query);
+
+// Bind parameters
+$rc = $stmt->bind_param('ssssss', $u_fname, $u_lname, $u_phone, $u_address, $u_email, $u_pwd);
+
+// Execute the prepared statement
+$stmt->execute();
                 if($stmt)
                 {
                     $succ = "User Added";
@@ -29,6 +34,7 @@
                 }
             }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -87,29 +93,23 @@
           <form method ="POST"> 
             <div class="form-group">
                 <label for="exampleInputEmail1">First Name</label>
-                <input type="text" required class="form-control" id="exampleInputEmail1" name="u_fname">
+                <input type="text" class="form-control" id="exampleInputEmail1" name="u_fname">
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Last Name</label>
                 <input type="text" class="form-control" id="exampleInputEmail1" name="u_lname">
             </div>
             <div class="form-group">
+                <label for="exampleInputEmail1">Address</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" name="u_address">
+            </div>
+            <div class="form-group">
                 <label for="exampleInputEmail1">Contact</label>
                 <input type="text" class="form-control" id="exampleInputEmail1" name="u_phone">
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail1">Address</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" name="u_addr">
-            </div>
-
-            <div class="form-group" style="display:none">
-                <label for="exampleInputEmail1">Category</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" value="User" name="u_category">
-            </div>
-            
-            <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" name="u_email"">
+                <input type="email" class="form-control" name="u_email">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
@@ -123,10 +123,6 @@
       </div>
        
       <hr>
-     
-
-      <!-- Sticky Footer -->
-      <?php include("vendor/inc/footer.php");?>
 
     </div>
     <!-- /.content-wrapper -->

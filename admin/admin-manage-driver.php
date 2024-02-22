@@ -8,7 +8,7 @@
   if(isset($_GET['del']))
 {
       $id=intval($_GET['del']);
-      $adn="delete from tms_user where u_id=?";
+      $adn="delete from tms_driver where d_id=?";
       $stmt= $mysqli->prepare($adn);
       $stmt->bind_param('i',$id);
       $stmt->execute();
@@ -88,13 +88,14 @@
                     <th>Name</th>
                     <th>Contact</th>
                     <th>Address</th>
-                    <th>Email</th>
+                    <th>License Number</th>
+                    <th>Experience</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <?php
 
-                    $ret="SELECT * FROM tms_user where u_category = 'Driver' "; 
+                    $ret="SELECT * FROM tms_driver "; 
                     $stmt= $mysqli->prepare($ret) ;
                     $stmt->execute() ;//ok
                     $res=$stmt->get_result();
@@ -105,13 +106,14 @@
                 <tbody>
                   <tr>
                     <td><?php echo $cnt;?></td>
-                    <td><?php echo $row->u_fname;?> <?php echo $row->u_lname;?></td>
-                    <td><?php echo $row->u_phone;?></td>
-                    <td><?php echo $row->u_addr;?></td>
-                    <td><?php echo $row->u_email;?></td>
+                    <td><?php echo $row->d_fname;?> <?php echo $row->d_lname;?></td>
+                    <td><?php echo $row->d_number;?></td>
+                    <td><?php echo $row->d_address;?></td>
+                    <td><?php echo $row->d_lice;?></td>
+                    <td><?php echo $row->d_exp;?></td>
                     <td>
-                      <a href="admin-manage-single-driver.php?u_id=<?php echo $row->u_id;?>" class="badge badge-success">Update</a>
-                      <a href="admin-manage-driver.php?del=<?php echo $row->u_id;?>" class="badge badge-danger">Remove</a>
+                      <a href="admin-manage-single-driver.php?d_id=<?php echo $row->d_id;?>" class="badge badge-success">Update</a>
+                      <a href="admin-manage-driver.php?del=<?php echo $row->d_id;?>" class="badge badge-danger">Remove</a>
                     </td>
                   </tr>
                 </tbody>
@@ -125,8 +127,6 @@
       </div>
       <!-- /.container-fluid -->
 
-      <!-- Sticky Footer -->
-      <?php include("vendor/inc/footer.php");?>
     </div>
     <!-- /.content-wrapper -->
 

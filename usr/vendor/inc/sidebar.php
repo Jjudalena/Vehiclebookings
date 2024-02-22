@@ -36,7 +36,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                       <h6 class="dropdown-header">Available Vehicles:</h6>
-                      <a class="dropdown-item" href="usr-book-vehicle.php">Book</a>
+                      <a class="dropdown-item" href="usr-book-vehicle.php">Reserve</a>
                     </div>
                   </li>
 

@@ -8,7 +8,7 @@
   if(isset($_GET['del']))
 {
       $id=intval($_GET['del']);
-      $adn="delete from tms_vehicle where v_id=?";
+      $adn="delete from tms_vehicles where v_id=?";
       $stmt= $mysqli->prepare($adn);
       $stmt->bind_param('i',$id);
       $stmt->execute();
@@ -87,13 +87,14 @@
                     <th>#</th>
                     <th>Name</th>
                     <th>Registration Number</th>
-                    <th>Driver</th>
+                    <th>Driver Firstname</th>
+                    <th>Driver Lastname</th>
                     <th>Status</th>
                   </tr>
                 </thead>
                 <?php
 
-                    $ret="SELECT * FROM tms_vehicle "; 
+                    $ret="SELECT * FROM tms_vehicles "; 
                     $stmt= $mysqli->prepare($ret) ;
                     $stmt->execute() ;//ok
                     $res=$stmt->get_result();
@@ -106,7 +107,8 @@
                     <td><?php echo $cnt;?></td>
                     <td><?php echo $row->v_name;?></td>
                     <td><?php echo $row->v_reg_no;?></td>
-                    <td><?php echo $row->v_driver;?></td>
+                    <td><?php echo $row->d_fname;?></td>
+                    <td><?php echo $row->d_lname;?></td>
                     <td>
                       <a href="admin-manage-single-vehicle.php?v_id=<?php echo $row->v_id;?>" class="badge badge-success">Update</a>
                       <a href="admin-manage-vehicle.php?del=<?php echo $row->v_id;?>" class="badge badge-danger">Delete</a>
@@ -123,8 +125,6 @@
       </div>
       <!-- /.container-fluid -->
 
-      <!-- Sticky Footer -->
-      <?php include("vendor/inc/footer.php");?>
     </div>
     <!-- /.content-wrapper -->
 

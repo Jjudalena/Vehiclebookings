@@ -33,7 +33,7 @@
             <a href="user-dashboard.php">Dashboard</a>
           </li>
           <li class="breadcrumb-item">Vehicle</li>
-          <li class="breadcrumb-item active">Book Vehicle</li>
+          <li class="breadcrumb-item active">Vehicle List</li>
 
         </ol>
 
@@ -52,7 +52,8 @@
                     <th>Vehicle Name</th>
                     <th>Category</th>
                     <th>Seats</th>
-                    <th>Driver</th>
+                    <th>Driver Firstname</th>
+                    <th>Driver Lastname</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -60,7 +61,7 @@
                 <tbody>
                 <?php
 
-                  $ret="SELECT * FROM tms_vehicle  where   v_status ='Available' "; //get all bookings
+                  $ret="SELECT * FROM tms_vehicles  where   v_status ='Available' "; //get all bookings
                   $stmt= $mysqli->prepare($ret) ;
                   $stmt->execute() ;//ok
                   $res=$stmt->get_result();
@@ -73,7 +74,8 @@
                     <td><?php echo $row->v_name;?></td>
                     <td><?php echo $row->v_category;?></td>
                     <td><?php echo $row->v_pass_no;?> Passengers</td>
-                    <td><?php echo $row->v_driver;?></td>
+                    <td><?php echo $row->d_fname;?></td>
+                    <td><?php echo $row->d_lname;?></td>
                     <td>
                       <a href="user-confirm-booking.php?v_id=<?php echo $row->v_id;?>" class = "btn btn-outline-success"><i class ="fa fa-clipboard"></i> Book Vehicle</a>
                     </td>
@@ -94,9 +96,6 @@
 
       </div>
       <!-- /.container-fluid -->
-
-      <!-- Sticky Footer -->
-     <?php include("vendor/inc/footer.php");?>
 
     </div>
     <!-- /.content-wrapper -->

@@ -45,14 +45,14 @@
                     <th>#</th>
                     <th>Name</th>
                     <th>Contact</th>
-                    <th>Address</th>
+                    <th>Department</th>
                     <th>Email</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <?php
 
-                    $ret="SELECT * FROM tms_user WHERE u_category = 'User' ORDER BY RAND() LIMIT 1000 "; //sql code to get to ten trains randomly
+                    $ret="SELECT * FROM tms_user ORDER BY RAND() LIMIT 1000 "; //sql code to get to ten trains randomly
                     $stmt= $mysqli->prepare($ret) ;
                     $stmt->execute() ;//ok
                     $res=$stmt->get_result();
@@ -65,7 +65,7 @@
                     <td><?php echo $cnt;?></td>
                     <td><?php echo $row->u_fname;?> <?php echo $row->u_lname;?></td>
                     <td><?php echo $row->u_phone;?></td>
-                    <td><?php echo $row->u_addr;?></td>
+                    <td><?php echo $row->u_dept;?></td>
                     <td><?php echo $row->u_email;?></td>
                     <td>
                       <a href="admin-manage-single-usr.php?u_id=<?php echo $row->u_id;?>" class="badge badge-success"><i class="fa fa-user-edit"></i> Update</a>
@@ -88,8 +88,6 @@
       </div>
       <!-- /.container-fluid -->
 
-      <!-- Sticky Footer -->
-      <?php include("vendor/inc/footer.php");?>
     </div>
     <!-- /.content-wrapper -->
 

@@ -138,9 +138,7 @@
 
   </div>
   <!-- /.container -->
-
-  <!-- Footer -->
-    <?php include("vendor/inc/footer.php");?>
+  
   <!--.Footer-->
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>

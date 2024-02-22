@@ -117,8 +117,8 @@
                     <th>Name</th>
                     <th>Phone</th>
                     <th>Vehicle Type</th>
-                    <th>Reg No</th>
-                    <th>Reservation date</th>
+                    <th>Plate No</th>
+                    <th>Reservation Date</th>
                     <th>Status</th>
                   </tr>
                 </thead>
@@ -157,17 +157,12 @@
             ?> 
         </div>
         </div>
-        
       </div>
-            ?> 
         </div>
         </div>
 
       </div>
       <!-- /.container-fluid -->
-
-      <!-- Sticky Footer -->
-     <?php include("vendor/inc/footer.php");?>
 
     </div>
     <!-- /.content-wrapper -->

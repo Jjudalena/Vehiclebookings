@@ -11,13 +11,11 @@
             $u_fname=$_POST['u_fname'];
             $u_lname = $_POST['u_lname'];
             $u_phone=$_POST['u_phone'];
-            $u_addr=$_POST['u_addr'];
             $u_email=$_POST['u_email'];
             $u_pwd=$_POST['u_pwd'];
-            $u_category=$_POST['u_category'];
-            $query="update tms_user set u_fname=?, u_lname=?, u_phone=?, u_addr=?, u_category=?, u_email=?, u_pwd=? where u_id=?";
+            $query="update tms_user set u_fname=?, u_lname=?, u_phone=?, u_email=?, u_pwd=? where u_id=?";
             $stmt = $mysqli->prepare($query);
-            $rc=$stmt->bind_param('sssssssi', $u_fname,  $u_lname, $u_phone, $u_addr, $u_category, $u_email, $u_pwd, $u_id);
+            $rc=$stmt->bind_param('sssssi', $u_fname,  $u_lname, $u_phone, $u_email, $u_pwd, $u_id);
             $stmt->execute();
                 if($stmt)
                 {
@@ -109,16 +107,6 @@
                 <input type="text" class="form-control" value="<?php echo $row->u_phone;?>" id="exampleInputEmail1" name="u_phone">
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail1">Address</label>
-                <input type="text" class="form-control" value="<?php echo $row->u_addr;?>" id="exampleInputEmail1" name="u_addr">
-            </div>
-
-            <div class="form-group" style="display:none">
-                <label for="exampleInputEmail1">Category</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" value="User" name="u_category">
-            </div>
-            
-            <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
                 <input type="email" value="<?php echo $row->u_email;?>" class="form-control" name="u_email"">
             </div>
@@ -136,10 +124,6 @@
        
       <hr>
      
-
-      <!-- Sticky Footer -->
-      <?php include("vendor/inc/footer.php");?>
-
     </div>
     <!-- /.content-wrapper -->
 

@@ -11,7 +11,7 @@
             //$u_fname=$_POST['u_fname'];
             //$u_lname = $_POST['u_lname'];
             //$u_phone=$_POST['u_phone'];
-            //$u_addr=$_POST['u_addr'];
+            //$u_address=$_POST['u_address'];
             $u_car_type = $_POST['u_car_type'];
             $u_car_regno  = $_POST['u_car_regno'];
             $u_car_bookdate = $_POST['u_car_bookdate'];
@@ -112,7 +112,7 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Address</label>
-                <input type="text" readonly class="form-control" value="<?php echo $row->u_addr;?>" id="exampleInputEmail1" name="u_addr">
+                <input type="text" readonly class="form-control" value="<?php echo $row->u_address;?>" id="exampleInputEmail1" name="u_address">
             </div>
             
             <div class="form-group">
@@ -151,10 +151,6 @@
       </div>
        
       <hr>
-     
-
-      <!-- Sticky Footer -->
-      <?php include("vendor/inc/footer.php");?>
 
     </div>
     <!-- /.content-wrapper -->

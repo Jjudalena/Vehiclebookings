@@ -5,7 +5,7 @@
   <meta name="description" content="">
   <meta name="author" content="MartDevelopers">
 
-  <title>Vehicle Booking System</title>
+  <title>Ride Ready Ateneo Vehicle Reservation System</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

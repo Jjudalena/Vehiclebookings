@@ -45,7 +45,8 @@
                     <th>#</th>
                     <th>Name</th>
                     <th>Plate Number</th>
-                    <th>Driver</th>
+                    <th>Driver Firstname</th>
+                    <th>Driver Lastname</th>
                     <th>Passengers</th>
                     <th>Category</th>
                     <th>Status</th>
@@ -53,7 +54,7 @@
                 </thead>
                 <?php
 
-                    $ret="SELECT * FROM tms_vehicle "; 
+                    $ret="SELECT * FROM tms_vehicles "; 
                     $stmt= $mysqli->prepare($ret) ;
                     $stmt->execute() ;//ok
                     $res=$stmt->get_result();
@@ -66,7 +67,8 @@
                     <td><?php echo $cnt;?></td>
                     <td><?php echo $row->v_name;?></td>
                     <td><?php echo $row->v_reg_no;?></td>
-                    <td><?php echo $row->v_driver;?></td>
+                    <td><?php echo $row->d_fname;?></td>
+                    <td><?php echo $row->d_lname;?></td>
                     <td><?php echo $row->v_pass_no;?></td>
                     <td><?php echo $row->v_category;?></td>
                     <td><?php if($row->v_status == "Available"){ echo '<span class = "badge badge-success">'.$row->v_status.'</span>'; } else { echo '<span class = "badge badge-danger">'.$row->v_status.'</span>';}?></td>
@@ -81,9 +83,6 @@
       </div>
       <!-- /.container-fluid -->
 
-      <!-- Sticky Footer -->
-      <?php include("vendor/inc/footer.php");?>
-    </div>
     <!-- /.content-wrapper -->
 
   </div>

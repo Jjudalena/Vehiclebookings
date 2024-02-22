@@ -8,17 +8,25 @@
   if(isset($_POST['add_driver']))
     {
 
-            $u_fname=$_POST['u_fname'];
-            $u_lname = $_POST['u_lname'];
-            $u_phone=$_POST['u_phone'];
-            $u_addr=$_POST['u_addr'];
-            $u_email=$_POST['u_email'];
-            $u_pwd=$_POST['u_pwd'];
-            $u_category=$_POST['u_category'];
-            $query="insert into tms_user (u_fname, u_lname, u_phone, u_addr, u_category, u_email, u_pwd) values(?,?,?,?,?,?,?)";
-            $stmt = $mysqli->prepare($query);
-            $rc=$stmt->bind_param('sssssss', $u_fname,  $u_lname, $u_phone, $u_addr, $u_category, $u_email, $u_pwd);
-            $stmt->execute();
+  // Retrieve POST data
+$d_fname = $_POST['d_fname'];
+$d_lname = $_POST['d_lname'];
+$d_number = $_POST['d_number'];
+$d_address = $_POST['d_address'];
+$d_lice = $_POST['d_lice'];
+$d_exp = $_POST['d_exp'];
+
+
+
+// Prepare the SQL query
+$query = "INSERT INTO tms_driver ( d_fname, d_lname, d_number, d_address, d_lice, d_exp) VALUES ( ?, ?, ?, ?, ?, ?)";
+$stmt = $mysqli->prepare($query);
+
+// Bind parameters
+$rc = $stmt->bind_param('ssisis', $d_fname, $d_lname, $d_number, $d_address, $d_lice, $d_exp);
+
+// Execute the prepared statement
+$stmt->execute();
                 if($stmt)
                 {
                     $succ = "Driver Added";
@@ -87,35 +95,30 @@
           <form method ="POST"> 
             <div class="form-group">
                 <label for="exampleInputEmail1">First Name</label>
-                <input type="text" required class="form-control" id="exampleInputEmail1" name="u_fname">
+                <input type="text" required class="form-control" id="exampleInputEmail1" name="d_fname">
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Last Name</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" name="u_lname">
+                <input type="text" class="form-control" id="exampleInputEmail1" name="d_lname">
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Contact</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" name="u_phone">
+                <input type="text" class="form-control" id="exampleInputEmail1" name="d_number">
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Address</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" name="u_addr">
-            </div>
-
-            <div class="form-group" style="display:none">
-                <label for="exampleInputEmail1">Category</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" value="Driver" name="u_category">
-            </div>
-            
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" name="u_email"">
+                <input type="text" class="form-control" id="exampleInputEmail1" name="d_address">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" name="u_pwd" id="exampleInputPassword1">
+                <label for="exampleInputEmail1">License Number</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" name="d_lice">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Driver Experience</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" name="d_exp">
             </div>
 
+        
             <button type="submit" name="add_driver" class="btn btn-success">Add Driver</button>
           </form>
           <!-- End Form-->
@@ -124,9 +127,6 @@
        
       <hr>
      
-
-      <!-- Sticky Footer -->
-      <?php include("vendor/inc/footer.php");?>
 
     </div>
     <!-- /.content-wrapper -->

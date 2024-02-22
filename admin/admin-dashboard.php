@@ -14,7 +14,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Ride Ready Ateneo Vehicle Reservation System - Admin Dashboard</title>
+  <title>Ride Ready Ateneo Vehicle Reservation - Admin Dashboard</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -59,7 +59,7 @@
                 </div>
                 <?php
                   //code for summing up number of users 
-                  $result ="SELECT count(*) FROM tms_user where u_category = 'User'";
+                  $result ="SELECT count(*) FROM tms_user";
                   $stmt = $mysqli->prepare($result);
                   $stmt->execute();
                   $stmt->bind_result($user);
@@ -84,7 +84,7 @@
                 </div>
                 <?php
                   //code for summing up number of drivers
-                  $result ="SELECT count(*) FROM tms_user where u_category = 'Driver'";
+                  $result ="SELECT count(*) FROM tms_driver ";
                   $stmt = $mysqli->prepare($result);
                   $stmt->execute();
                   $stmt->bind_result($driver);
@@ -109,7 +109,7 @@
                 </div>
                 <?php
                   //code for summing up number of vehicles
-                  $result ="SELECT count(*) FROM tms_vehicle";
+                  $result ="SELECT count(*) FROM tms_vehicles";
                   $stmt = $mysqli->prepare($result);
                   $stmt->execute();
                   $stmt->bind_result($vehicle);
@@ -209,9 +209,6 @@
         
       </div>
       <!-- /.container-fluid -->
-
-      <!-- Sticky Footer -->
-      <?php include("vendor/inc/footer.php");?>
 
     </div>
     <!-- /.content-wrapper -->

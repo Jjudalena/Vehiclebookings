@@ -13,12 +13,13 @@
             $v_category=$_POST['v_category'];
             //$v_dpic=$_POST['v_dpic'];
             $v_status=$_POST['v_status'];
-            $v_driver=$_POST['v_driver'];
+            $d_fname=$_POST['d_fname'];
+            $d_lname=$_POST['d_lname'];
             $v_dpic=$_FILES["v_dpic"]["name"];
             move_uploaded_file($_FILES["v_dpic"]["tmp_name"],"../vendor/img/".$_FILES["v_dpic"]["name"]);
-            $query="update tms_vehicle set v_name=?, v_reg_no=?, v_driver=?, v_category=?, v_dpic=?, v_status=? where v_id = ?";
+            $query="update tms_vehicle set v_name=?, v_reg_no=?, d_fname=?, d_lname=?, v_category=?, v_dpic=?, v_status=? where v_id = ?";
             $stmt = $mysqli->prepare($query);
-            $rc=$stmt->bind_param('ssssssi', $v_name, $v_reg_no, $v_driver, $v_category, $v_dpic, $v_status, $v_id);
+            $rc=$stmt->bind_param('sssssssi', $v_name, $v_reg_no, $d_fname, $d_lname, $v_category, $v_dpic, $v_status, $v_id);
             $stmt->execute();
                 if($stmt)
                 {
@@ -107,10 +108,15 @@
             </div>
 
             <div class="form-group">
-                <label for="exampleInputEmail1">Driver</label>
-                <input type="text" value="<?php echo $row->v_driver;?>" class="form-control" id="exampleInputEmail1" name="v_driver">
+                <label for="exampleInputEmail1">Driver Firstname</label>
+                <input type="text" value="<?php echo $row->d_fname;?>" class="form-control" id="exampleInputEmail1" name="d_fname">
             </div>
-            
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Driver Lastname</label>
+                <input type="text" value="<?php echo $row->d_lname;?>" class="form-control" id="exampleInputEmail1" name="d_lname">
+            </div>
+
             <div class="form-group">
               <label for="exampleFormControlSelect1">Vehicle Category</label>
               <select class="form-control" name="v_category" id="exampleFormControlSelect1">
@@ -145,10 +151,7 @@
       </div>
        
       <hr>
-     
 
-      <!-- Sticky Footer -->
-      <?php include("vendor/inc/footer.php");?>
 
     </div>
     <!-- /.content-wrapper -->

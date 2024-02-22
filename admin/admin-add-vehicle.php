@@ -13,12 +13,13 @@
             $v_category=$_POST['v_category'];
             $v_pass_no=$_POST['v_pass_no'];
             $v_status=$_POST['v_status'];
-            $v_driver=$_POST['v_driver'];
+            $d_fname=$_POST['d_fname'];
+            $d_lname=$_POST['d_lname'];
             $v_dpic=$_FILES["v_dpic"]["name"];
 		        move_uploaded_file($_FILES["v_dpic"]["tmp_name"],"../vendor/img/".$_FILES["v_dpic"]["name"]);
-            $query="insert into tms_vehicle (v_name, v_pass_no, v_reg_no, v_driver, v_category, v_dpic, v_status ) values(?,?,?,?,?,?,?)";
+            $query="insert into tms_vehicles (v_name, v_pass_no, v_reg_no, d_fname, d_lname, v_category, v_dpic, v_status ) values(?,?,?,?,?,?,?,?)";
             $stmt = $mysqli->prepare($query);
-            $rc=$stmt->bind_param('sssssss', $v_name, $v_pass_no, $v_reg_no, $v_driver, $v_category, $v_dpic, $v_status);
+            $rc=$stmt->bind_param('siisssss', $v_name, $v_pass_no, $v_reg_no, $d_fname, $d_lname, $v_category, $v_dpic, $v_status);
             $stmt->execute();
                 if($stmt)
                 {
@@ -91,7 +92,7 @@
                 <input type="text" required class="form-control" id="exampleInputEmail1" name="v_name">
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail1">Vehicle Registration Number</label>
+                <label for="exampleInputEmail1">Vehicle Plate Number</label>
                 <input type="text" class="form-control" id="exampleInputEmail1" name="v_reg_no">
             </div>
             <div class="form-group">
@@ -99,20 +100,24 @@
                 <input type="text" class="form-control" id="exampleInputEmail1" name="v_pass_no">
             </div>
             <div class="form-group">
-              <label for="exampleFormControlSelect1">Driver</label>
-              <select class="form-control" name="v_driver" id="exampleFormControlSelect1">
+                <label for="exampleInputEmail1">Driver Firstname</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" name="d_fname">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Driver Lastname</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" name="d_lname">
+            </div>
+
                 <?php
 
-                $ret="SELECT * FROM tms_user where u_category = 'Driver' "; //sql code to get to ten trains randomly
+                $ret="SELECT * FROM tms_driver where d_id = 'Driver' "; //sql code to get to ten trains randomly
                 $stmt= $mysqli->prepare($ret) ;
                 $stmt->execute() ;//ok
                 $res=$stmt->get_result();
                 $cnt=1;
                 while($row=$res->fetch_object())
-                {
                 ?>
-                <option><?php echo $row->u_fname;?> <?php echo $row->u_lname;?></option>
-                <?php }?> 
+            
               </select>
             </div>
 
@@ -136,7 +141,7 @@
               <select class="form-control" name="v_status" id="exampleFormControlSelect1">
                 <option>Booked</option>
                 <option>Available</option>
-                <option>unavilable</option>
+                <option>Unavilable</option>
                 
               </select>
             </div>
@@ -154,9 +159,6 @@
        
       <hr>
      
-
-      <!-- Sticky Footer -->
-      <?php include("vendor/inc/footer.php");?>
 
     </div>
     <!-- /.content-wrapper -->

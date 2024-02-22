@@ -6,7 +6,7 @@
   <meta name="description" content="Vehicle Booking System Transport Saccos, Matatu Industry">
   <meta name="author" content="MartDevelopers">
 
-  <title>Vehicle Booking System - Admin Dashboard</title>
+  <title>Ride Ready Ateneo Vehicle Reservation Systen - Admin Dashboard</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
