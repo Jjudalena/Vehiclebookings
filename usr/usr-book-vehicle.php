@@ -60,7 +60,7 @@
                 <tbody>
                 <?php
 
-                  $ret="SELECT * FROM tms_vehicle  where   v_status ='Available' "; //get all bookings
+                  $ret="SELECT * FROM tms_vehicles"; //get all bookings
                   $stmt= $mysqli->prepare($ret) ;
                   $stmt->execute() ;//ok
                   $res=$stmt->get_result();

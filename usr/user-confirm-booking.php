@@ -4,14 +4,9 @@
   include('vendor/inc/checklogin.php');
   check_login();
   $aid=$_SESSION['u_id'];
-  //Add Booking
   if(isset($_POST['book_vehicle']))
     {
             $u_id = $_SESSION['u_id'];
-            //$u_fname=$_POST['u_fname'];
-            //$u_lname = $_POST['u_lname'];
-            //$u_phone=$_POST['u_phone'];
-            //$u_addr=$_POST['u_addr'];
             $u_car_type = $_POST['u_car_type'];
             $u_car_regno  = $_POST['u_car_regno'];
             $u_car_bookdate = $_POST['u_car_bookdate'];
@@ -22,7 +17,7 @@
             $u_car_book_status  = $_POST['u_car_book_status'];
             $query = "UPDATE tms_user SET u_car_type=?, u_car_bookdate=?, u_car_regno=?, u_car_book_status=?, u_purp=?, u_course=?, u_dest=?, u_dept=? WHERE u_id=?";
             $stmt = $mysqli->prepare($query);
-            $src= $stmt->bind_param('sissssssi', $u_car_type, $u_car_bookdate, $u_car_regno, $u_car_book_status, $u_purp, $u_course, $u_dest, $u_dept, $u_id);
+            $src= $stmt->bind_param('ssssssssi', $u_car_type, $u_car_bookdate, $u_car_regno, $u_car_book_status, $u_purp, $u_course, $u_dest, $u_dept, $u_id);
 
             $stmt->execute();
                 if($stmt)
@@ -94,12 +89,11 @@
           <!--Add User Form-->
           <?php
             $aid=$_GET['v_id'];
-            $ret="select * from tms_vehicle where v_id=?";
+            $ret="select * from tms_vehicles where v_id=?";
             $stmt= $mysqli->prepare($ret) ;
             $stmt->bind_param('i',$aid);
             $stmt->execute() ;//ok
             $res=$stmt->get_result();
-            //$cnt=1;
             while($row=$res->fetch_object())
         {
         ?>
@@ -145,10 +139,6 @@
       </div>
        
       <hr>
-     
-
-      <!-- Sticky Footer -->
-      <?php include("vendor/inc/footer.php");?>
 
     </div>
     <!-- /.content-wrapper -->

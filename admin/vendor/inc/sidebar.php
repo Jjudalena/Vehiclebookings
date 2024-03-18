@@ -47,10 +47,10 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-fw fa-book"></i>
-          <span>Bookings</span>
+          <span>Reservations</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">Bookings:</h6>
+          <h6 class="dropdown-header">My Reservations:</h6>
           <a class="dropdown-item" href="admin-add-booking.php">Add</a>
           <a class="dropdown-item" href="admin-view-booking.php">View</a>
           <a class="dropdown-item" href="admin-manage-booking.php">Manage</a>

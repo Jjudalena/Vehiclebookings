@@ -52,21 +52,21 @@
         <!-- Icon Cards-->
         <div class="row">
           <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-danger o-hidden h-100">
+            <div class="card text-white bg-primary o-hidden h-100">
               <div class="card-body">
                 <div class="card-body-icon">
                   <i class="fas fa-fw fa-users"></i>
                 </div>
                 <?php
                   //code for summing up number of users 
-                  $result ="SELECT count(*) FROM tms_user where u_category = 'User'";
+                  $result ="SELECT count(*) FROM tms_user";
                   $stmt = $mysqli->prepare($result);
                   $stmt->execute();
                   $stmt->bind_result($user);
                   $stmt->fetch();
                   $stmt->close();
                 ?>
-                <div class="mr-5"><span class="badge badge-danger"><?php echo $user;?></span> Users</div>
+                <div class="mr-5"><span class="badge badge-primary"><?php echo $user;?></span> Users</div>
               </div>
               <a class="card-footer text-white clearfix small z-1" href="admin-view-user.php">
                 <span class="float-left">View Details</span>
@@ -77,21 +77,21 @@
             </div>
           </div>
           <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-danger o-hidden h-100">
+            <div class="card text-white bg-primary o-hidden h-100">
               <div class="card-body">
                 <div class="card-body-icon">
                   <i class="fas fa-fw fa fa-id-card"></i>
                 </div>
                 <?php
                   //code for summing up number of drivers
-                  $result ="SELECT count(*) FROM tms_driver where u_category = 'Driver'";
+                  $result ="SELECT count(*) FROM tms_driver";
                   $stmt = $mysqli->prepare($result);
                   $stmt->execute();
                   $stmt->bind_result($driver);
                   $stmt->fetch();
                   $stmt->close();
                 ?>
-                <div class="mr-5"><span class="badge badge-danger"><?php echo $driver;?></span> Drivers</div>
+                <div class="mr-5"><span class="badge badge-primary"><?php echo $driver;?></span> Drivers</div>
               </div>
               <a class="card-footer text-white clearfix small z-1" href="admin-view-driver.php">
                 <span class="float-left">View Details</span>
@@ -102,21 +102,21 @@
             </div>
           </div>
           <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-danger o-hidden h-100">
+            <div class="card text-white bg-primary o-hidden h-100">
               <div class="card-body">
                 <div class="card-body-icon">
                   <i class="fas fa-fw fa fa-bus"></i>
                 </div>
                 <?php
                   //code for summing up number of vehicles
-                  $result ="SELECT count(*) FROM tms_vehicle";
+                  $result ="SELECT count(*) FROM tms_vehicles";
                   $stmt = $mysqli->prepare($result);
                   $stmt->execute();
                   $stmt->bind_result($vehicle);
                   $stmt->fetch();
                   $stmt->close();
                 ?>
-                <div class="mr-5"><span class="badge badge-danger"><?php echo $vehicle;?></span> Vehicles</div>
+                <div class="mr-5"><span class="badge badge-primary"><?php echo $vehicle;?></span> Vehicles</div>
               </div>
               <a class="card-footer text-white clearfix small z-1" href="admin-view-vehicle.php">
                 <span class="float-left">View Details</span>
@@ -127,7 +127,7 @@
             </div>
           </div>
           <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-danger o-hidden h-100">
+            <div class="card text-white bg-primary o-hidden h-100">
               <div class="card-body">
                 <div class="card-body-icon">
                   <i class="fas fa-fw fa fa-address-book"></i>
@@ -141,7 +141,7 @@
                   $stmt->fetch();
                   $stmt->close();
                 ?>
-                <div class="mr-5"><span class="badge badge-danger"><?php echo $book;?></span> Reservation</div>
+                <div class="mr-5"><span class="badge badge-primary"><?php echo $book;?></span> Reservation</div>
               </div>
               <a class="card-footer text-white clearfix small z-1" href="admin-view-booking.php">
                 <span class="float-left">View Details</span>
@@ -210,9 +210,6 @@
       </div>
       <!-- /.container-fluid -->
 
-      <!-- Sticky Footer -->
-      <?php include("vendor/inc/footer.php");?>
-
     </div>
     <!-- /.content-wrapper -->
 
@@ -237,7 +234,7 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-danger" href="admin-logout.php">Logout</a>
+          <a class="btn btn-primary" href="admin-logout.php">Logout</a>
         </div>
       </div>
     </div>

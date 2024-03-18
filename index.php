@@ -18,16 +18,16 @@
 
   <header>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-      
-      <div class="carousel-inner" role="listbox">
+       
+    <div class="carousel-inner" role="listbox">
         <!-- Slide One - Set the background image for this slide in the line below -->
-        <div class="carousel-item active" style="background-image: url('vendor/img/placeholder.png')">
+        <div class="carousel-item active" style="background-image: url('vendor/Auxiliary Image/20.jpg')">
         </div>
         <!-- Slide Two - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url('vendor/img/placeholder.png')">
+        <div class="carousel-item" style="background-image: url('vendor/Auxiliary Image/16.jpg')">
         </div>
         <!-- Slide Three - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url('vendor/img/placeholder.png')">
+        <div class="carousel-item" style="background-image: url('vendor/Auxiliary Image/18.jpg')">
         </div>
 
         </div>
@@ -46,7 +46,7 @@
   <!-- Page Content -->
   <div class="container">
 
-    <h1 class="my-4">Ride Ready Ateneo Reservation </h1>
+    <h1 class="my-4">Ride Ready Ateneo Vehicle Reservation System </h1>
 
     <!-- Marketing Icons Section -->
     <div class="row">
@@ -101,17 +101,17 @@
     <div class="row">
       <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="vendor/img/placeholder-1.png" alt=""></a>
+          <a href="#"><img class="card-img-top" src="vendor/Auxiliary Image/5.jpg" alt=""></a>
         </div>
       </div>
       <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="vendor/img/placeholder-1.png" alt=""></a>
+          <a href="#"><img class="card-img-top" src="vendor/Auxiliary Image/7.jpg" alt=""></a>
         </div>
       </div>
       <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="vendor/img/placeholder-1.png" alt=""></a>
+          <a href="#"><img class="card-img-top" src="vendor/Auxiliary Image/9.jpg" alt=""></a>
         </div>
       </div>
       
@@ -138,10 +138,6 @@
 
   </div>
   <!-- /.container -->
-
-  <!-- Footer -->
-    <?php include("vendor/inc/footer.php");?>
-  <!--.Footer-->
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

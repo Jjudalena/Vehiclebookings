@@ -11,7 +11,7 @@
           // Retrieve POST data
 $d_fname = $_POST['d_fname'];
 $d_lname = $_POST['d_lname'];
-$d_number = $_POST['d_number'];
+$d_phone = $_POST['d_phone'];
 $d_address = $_POST['d_address'];
 $d_lice = $_POST['d_lice'];
 $d_exp = $_POST['d_exp'];
@@ -19,11 +19,11 @@ $d_exp = $_POST['d_exp'];
 
 
 // Prepare the SQL query
-$query = "INSERT INTO tms_driver ( d_fname, d_lname, d_number, d_address, d_lice, d_exp) VALUES ( ?, ?, ?, ?, ?, ?)";
+$query = "INSERT INTO tms_driver ( d_fname, d_lname, d_phone, d_address, d_lice, d_exp) VALUES ( ?, ?, ?, ?, ?, ?)";
 $stmt = $mysqli->prepare($query);
 
 // Bind parameters
-$rc = $stmt->bind_param('ssisis', $d_fname, $d_lname, $d_number, $d_address, $d_lice, $d_exp);
+$rc = $stmt->bind_param('ssisss', $d_fname, $d_lname, $d_phone, $d_address, $d_lice, $d_exp);
 
 // Execute the prepared statement
 $stmt->execute();
@@ -103,7 +103,7 @@ $stmt->execute();
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Contact</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" name="d_number">
+                <input type="text" class="form-control" id="exampleInputEmail1" name="d_phone">
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Address</label>
@@ -126,10 +126,6 @@ $stmt->execute();
       </div>
        
       <hr>
-     
-
-      <!-- Sticky Footer -->
-      <?php include("vendor/inc/footer.php");?>
 
     </div>
     <!-- /.content-wrapper -->

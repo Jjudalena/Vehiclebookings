@@ -93,9 +93,6 @@
       </div>
       <!-- /.container-fluid -->
 
-      <!-- Sticky Footer -->
-      <?php include("vendor/inc/footer.php");?>
-
     </div>
     <!-- /.content-wrapper -->
 

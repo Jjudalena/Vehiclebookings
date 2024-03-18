@@ -78,7 +78,7 @@
         <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-users"></i>
-            Registered Users</div>
+            Registered Drivers</div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -107,7 +107,7 @@
                   <tr>
                     <td><?php echo $cnt;?></td>
                     <td><?php echo $row->d_fname;?> <?php echo $row->d_lname;?></td>
-                    <td><?php echo $row->d_number;?></td>
+                    <td><?php echo $row->d_phone;?></td>
                     <td><?php echo $row->d_address;?></td>
                     <td><?php echo $row->d_lice;?></td>
                     <td><?php echo $row->d_exp;?></td>
@@ -127,8 +127,6 @@
       </div>
       <!-- /.container-fluid -->
 
-      <!-- Sticky Footer -->
-      <?php include("vendor/inc/footer.php");?>
     </div>
     <!-- /.content-wrapper -->
 

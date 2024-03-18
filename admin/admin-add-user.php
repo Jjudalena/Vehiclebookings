@@ -11,13 +11,13 @@
             $u_fname=$_POST['u_fname'];
             $u_lname = $_POST['u_lname'];
             $u_phone=$_POST['u_phone'];
-            $u_addr=$_POST['u_addr'];
+            $u_address=$_POST['u_address'];
+            $u_dept=$_POST['u_dept'];
             $u_email=$_POST['u_email'];
             $u_pwd=$_POST['u_pwd'];
-            $u_category=$_POST['u_category'];
-            $query="insert into tms_user (u_fname, u_lname, u_phone, u_addr, u_category, u_email, u_pwd) values(?,?,?,?,?,?,?)";
+            $query="insert into tms_user (u_fname, u_lname, u_phone, u_address, u_dept, u_email, u_pwd) values(?,?,?,?,?,?,?)";
             $stmt = $mysqli->prepare($query);
-            $rc=$stmt->bind_param('sssssss', $u_fname,  $u_lname, $u_phone, $u_addr, $u_category, $u_email, $u_pwd);
+            $rc=$stmt->bind_param('sssssss', $u_fname,  $u_lname, $u_phone, $u_address, $u_dept, $u_email, $u_pwd);
             $stmt->execute();
                 if($stmt)
                 {
@@ -99,17 +99,17 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Address</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" name="u_addr">
+                <input type="text" class="form-control" id="exampleInputEmail1" name="u_address">
             </div>
 
             <div class="form-group" style="display:none">
-                <label for="exampleInputEmail1">Category</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" value="User" name="u_category">
+                <label for="exampleInputEmail1">Department</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" value="User" name="u_dept">
             </div>
             
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" name="u_email"">
+                <input type="email" class="form-control" name="u_email">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
@@ -123,10 +123,6 @@
       </div>
        
       <hr>
-     
-
-      <!-- Sticky Footer -->
-      <?php include("vendor/inc/footer.php");?>
 
     </div>
     <!-- /.content-wrapper -->

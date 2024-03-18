@@ -26,10 +26,9 @@
 <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Vehicle Booking System Transport Saccos, Matatu Industry">
-  <meta name="author" content="MartDevelopers">
+  
 
-  <title>Vehicle Booking System | Admin - Forgot Password</title>
+  <title>Ride Ready Ateneo Vehicle Reservation System | Admin - Forgot Password</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

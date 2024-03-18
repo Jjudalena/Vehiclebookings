@@ -62,20 +62,16 @@
       <div class="col-lg-4 mb-4">
         <h3>Contact Details</h3>
         <p>
-          90125 
-          <br>402 Webster Street
-          <br>
-        </p>
-        <p>
           <abbr title="Phone">P</abbr>: (000) 011-1100
         </p>
         <p>
-          <abbr title="Email">E</abbr>:
-          <a href="mailto:mail@tms.com">mail@transportmsphp.com
-          </a>
+          <abbr title="Auxiliary Office">O</abbr>: Auxiliary Office
         </p>
         <p>
-          <abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 5:00 PM
+          <abbr title="Working Hours">H</abbr>: Monday - Friday: 8:00 AM to 5:00 PM
+        </p>
+        <p>
+          <abbr title="Working Hours">H</abbr>: Saturday: 8:00 AM to 12:00 PM
         </p>
       </div>
     </div>
@@ -91,10 +87,6 @@
 
   </div>
   <!-- /.container -->
-
-  <!-- Footer -->
-  <?php include("vendor/inc/footer.php");?>
-
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

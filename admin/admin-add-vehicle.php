@@ -103,7 +103,7 @@
               <select class="form-control" name="v_driver" id="exampleFormControlSelect1">
                 <?php
 
-                $ret="SELECT * FROM tms_user where u_category = 'Driver' "; //sql code to get to ten trains randomly
+                $ret="SELECT * FROM tms_user"; //sql code to get to ten trains randomly
                 $stmt= $mysqli->prepare($ret) ;
                 $stmt->execute() ;//ok
                 $res=$stmt->get_result();
@@ -136,7 +136,7 @@
               <select class="form-control" name="v_status" id="exampleFormControlSelect1">
                 <option>Booked</option>
                 <option>Available</option>
-                <option>unavilable</option>
+                <option>Unavilable</option>
                 
               </select>
             </div>
@@ -153,11 +153,7 @@
       </div>
        
       <hr>
-     
-
-      <!-- Sticky Footer -->
-      <?php include("vendor/inc/footer.php");?>
-
+      
     </div>
     <!-- /.content-wrapper -->
 

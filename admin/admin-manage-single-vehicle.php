@@ -16,7 +16,7 @@
             $v_driver=$_POST['v_driver'];
             $v_dpic=$_FILES["v_dpic"]["name"];
             move_uploaded_file($_FILES["v_dpic"]["tmp_name"],"../vendor/img/".$_FILES["v_dpic"]["name"]);
-            $query="update tms_vehicle set v_name=?, v_reg_no=?, v_driver=?, v_category=?, v_dpic=?, v_status=? where v_id = ?";
+            $query="update tms_vehicles set v_name=?, v_reg_no=?, v_driver=?, v_category=?, v_dpic=?, v_status=? where v_id = ?";
             $stmt = $mysqli->prepare($query);
             $rc=$stmt->bind_param('ssssssi', $v_name, $v_reg_no, $v_driver, $v_category, $v_dpic, $v_status, $v_id);
             $stmt->execute();
@@ -87,7 +87,7 @@
           <!--Add User Form-->
           <?php
             $aid=$_GET['v_id'];
-            $ret="select * from tms_vehicle where v_id=?";
+            $ret="select * from tms_vehicles where v_id=?";
             $stmt= $mysqli->prepare($ret) ;
             $stmt->bind_param('i',$aid);
             $stmt->execute() ;//ok
@@ -115,10 +115,16 @@
               <label for="exampleFormControlSelect1">Vehicle Category</label>
               <select class="form-control" name="v_category" id="exampleFormControlSelect1">
                 <option>Bus</option>
-                <option>Matatu</option>
-                <option>Nissan</option>
+                <option>Pickup</option>
+                <option>SUV</option>
+                <option>Van</option>
+                <option>Motorcycle</option>
+                <option>L3</option>
+                <option>MPV</option>
+                <option>Truck</option>
 
               </select>
+            </div>
             </div>
 
             <div class="form-group">
@@ -126,6 +132,7 @@
               <select class="form-control" name="v_status" id="exampleFormControlSelect1">
                 <option>Booked</option>
                 <option>Available</option>
+                <option>Unavailable</option>
               </select>
             </div>
 
@@ -145,10 +152,6 @@
       </div>
        
       <hr>
-     
-
-      <!-- Sticky Footer -->
-      <?php include("vendor/inc/footer.php");?>
 
     </div>
     <!-- /.content-wrapper -->

@@ -74,14 +74,14 @@
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="#">Bookings</a>
+            <a href="#">reservations</a>
           </li>
           <li class="breadcrumb-item active">Add</li>
         </ol>
         <hr>
         <div class="card">
         <div class="card-header">
-          Add Booking
+          Add Reservation
         </div>
         <div class="card-body">
           <!--Add User Form-->
@@ -111,7 +111,7 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Address</label>
-                <input type="text" class="form-control" value="<?php echo $row->u_addr;?>" id="exampleInputEmail1" name="u_addr">
+                <input type="text" class="form-control" value="<?php echo $row->u_address;?>" id="exampleInputEmail1" name="u_address">
             </div>
 
             <div class="form-group" style="display:none">
@@ -123,9 +123,7 @@
                 <label for="exampleInputEmail1">Email address</label>
                 <input type="email" value="<?php echo $row->u_email;?>" class="form-control" name="u_email"">
             </div>
-
             
-
             <div class="form-group">
               <label for="exampleFormControlSelect1">Vehicle Brand</label>
               <select class="form-control" name="u_car_type" id="exampleFormControlSelect1">
@@ -143,7 +141,7 @@
               <select class="form-control" name="u_car_regno" id="exampleFormControlSelect1">
                 <?php
 
-                $ret="SELECT * FROM tms_vehicle  "; //sql code to get to all vehicles
+                $ret="SELECT * FROM tms_vehicles"; //sql code to get to all vehicles
                 $stmt= $mysqli->prepare($ret) ;
                 $stmt->execute() ;//ok
                 $res=$stmt->get_result();
@@ -180,10 +178,6 @@
        
       <hr>
      
-
-      <!-- Sticky Footer -->
-      <?php include("vendor/inc/footer.php");?>
-
     </div>
     <!-- /.content-wrapper -->
 

@@ -65,7 +65,7 @@
                     <td><?php echo $cnt;?></td>
                     <td><?php echo $row->u_fname;?> <?php echo $row->u_lname;?></td>
                     <td><?php echo $row->u_phone;?></td>
-                    <td><?php echo $row->u_course;?></td>
+                    <td><?php echo $row->u_address;?></td>
                     <td><?php echo $row->u_email;?></td>
                     <td>
                       <a href="admin-manage-single-usr.php?u_id=<?php echo $row->u_id;?>" class="badge badge-success"><i class="fa fa-user-edit"></i> Update</a>
@@ -88,8 +88,6 @@
       </div>
       <!-- /.container-fluid -->
 
-      <!-- Sticky Footer -->
-      <?php include("vendor/inc/footer.php");?>
     </div>
     <!-- /.content-wrapper -->
 

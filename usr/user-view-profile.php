@@ -54,7 +54,7 @@
                     <h5 class="card-title"><?php echo $row->u_fname;?> <?php echo $row->u_lname;?></h5>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><b>Address:</b> <?php echo $row->u_addr;?></li>
+                    <li class="list-group-item"><b>Address:</b> <?php echo $row->u_address;?></li>
                     <li class="list-group-item"><b>Contact:</b> <?php echo $row->u_phone;?></li>
                     <li class="list-group-item"><b>Email Address:</b> <?php echo $row->u_email;?></li>
                 </ul>
@@ -64,8 +64,6 @@
                 </div>
             </div>
         <?php }?>
-      <!-- Sticky Footer -->
-     <?php include("vendor/inc/footer.php");?>
 
     </div>
     <!-- /.content-wrapper -->

@@ -32,7 +32,7 @@
     </ol>
     <?php
 
-      $ret="SELECT * FROM tms_vehicle  ORDER BY RAND() LIMIT 10 "; //get all feedbacks
+      $ret="SELECT * FROM tms_vehicles  ORDER BY RAND() LIMIT 10 "; //get all feedbacks
       $stmt= $mysqli->prepare($ret) ;
       $stmt->execute() ;//ok
       $res=$stmt->get_result();
@@ -69,7 +69,6 @@
   
 </div>  
 
-  <?php include("vendor/inc/footer.php");?>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>

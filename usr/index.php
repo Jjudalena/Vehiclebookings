@@ -12,25 +12,15 @@
       $stmt -> bind_result($u_email,$u_pwd,$u_id);//bind result
       $rs=$stmt->fetch();
       $_SESSION['u_id']=$u_id;//assaign session to user id
-      $_SESSION['login']=$uemail;
+      $_SESSION['login']=$u_email;
       $uip=$_SERVER['REMOTE_ADDR'];
       $ldate=date('d/m/Y h:i:s', time());
       if($rs)
-      {//get user logs
-        $uid=$_SESSION['u_id'];
-        $uemail=$_SESSION['login'];
-        $ip=$_SERVER['REMOTE_ADDR'];
-        $geopluginURL='http://www.geoplugin.net/php.gp?ip='.$ip;
-        $addrDetailsArr = unserialize(file_get_contents($geopluginURL));
-        $city = $addrDetailsArr['geoplugin_city'];
-        $country = $addrDetailsArr['geoplugin_countryName'];
-        $log="insert into userLog(u_id, u_email, u_ip, u_city, u_country) values('$uid','$uemail','$ip','$city','$country')";
-        $mysqli->query($log);
-        if($log)
+
         {
          header("location:user-dashboard.php");
          }
-        }
+      
       else
       {
       #echo "<script>alert('Access Denied Please Check Your Credentials');</script>";
@@ -50,7 +40,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Ride Ready Ateneo Vehicle - User Login</title>
+  <title>Ride Ready Ateneo Vehicle Reservation System - User Login</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

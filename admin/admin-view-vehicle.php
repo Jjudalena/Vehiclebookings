@@ -53,7 +53,7 @@
                 </thead>
                 <?php
 
-                    $ret="SELECT * FROM tms_vehicle "; 
+                    $ret="SELECT * FROM tms_vehicles "; 
                     $stmt= $mysqli->prepare($ret) ;
                     $stmt->execute() ;//ok
                     $res=$stmt->get_result();
@@ -81,8 +81,6 @@
       </div>
       <!-- /.container-fluid -->
 
-      <!-- Sticky Footer -->
-      <?php include("vendor/inc/footer.php");?>
     </div>
     <!-- /.content-wrapper -->
 

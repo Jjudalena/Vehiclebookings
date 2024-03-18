@@ -25,7 +25,7 @@
     <!-- Intro Content -->
     <div class="row">
       <div class="col-lg-6">
-        <img class="img-fluid rounded mb-4" src="vendor/img/placeholder-1.png" alt="">
+        <img class="img-fluid rounded mb-4" src="vendor/Auxiliary Image/12.jpg" alt="">
       </div>
       <div class="col-lg-6">
         <h2>About Us</h2>
@@ -45,9 +45,6 @@ Institutional activities are always given priority over scheduled and regular sp
     <!-- /.row -->
   </div>
   <!-- /.container -->
-
-  <!-- Footer -->
-<?php include("vendor/inc/footer.php");?>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>

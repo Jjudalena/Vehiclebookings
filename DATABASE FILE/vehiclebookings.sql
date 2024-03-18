@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 24, 2024 at 06:00 AM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.0.32
+-- Generation Time: Feb 22, 2024 at 03:54 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `vehiclebookings`
+-- Database: `rravrs`
 --
 
 -- --------------------------------------------------------
@@ -33,7 +32,7 @@ CREATE TABLE `tms_admin` (
   `a_name` varchar(200) NOT NULL,
   `a_email` varchar(200) NOT NULL,
   `a_pwd` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tms_admin`
@@ -53,7 +52,7 @@ CREATE TABLE `tms_feedback` (
   `f_uname` varchar(200) NOT NULL,
   `f_content` longtext NOT NULL,
   `f_status` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tms_feedback`
@@ -73,7 +72,7 @@ INSERT INTO `tms_feedback` (`f_id`, `f_uname`, `f_content`, `f_status`) VALUES
 CREATE TABLE `tms_pwd_resets` (
   `r_id` int(20) NOT NULL,
   `r_email` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tms_pwd_resets`
@@ -95,8 +94,8 @@ CREATE TABLE `tms_syslogs` (
   `u_ip` varbinary(200) NOT NULL,
   `u_city` varchar(200) NOT NULL,
   `u_country` varchar(200) NOT NULL,
-  `u_logintime` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `u_logintime` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -119,7 +118,7 @@ CREATE TABLE `tms_user` (
   `u_dept` varchar(200) NOT NULL,
   `u_course` varchar(200) NOT NULL,
   `u_car_book_status` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tms_user`
@@ -133,10 +132,10 @@ INSERT INTO `tms_user` (`u_id`, `u_fname`, `u_lname`, `u_phone`, `u_email`, `u_p
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tms_vehicle`
+-- Table structure for table `tms_vehicles`
 --
 
-CREATE TABLE `tms_vehicle` (
+CREATE TABLE `tms_vehicles` (
   `v_id` int(20) NOT NULL,
   `v_name` varchar(200) NOT NULL,
   `v_reg_no` varchar(200) NOT NULL,
@@ -145,13 +144,13 @@ CREATE TABLE `tms_vehicle` (
   `v_category` varchar(200) NOT NULL,
   `v_dpic` varchar(200) NOT NULL,
   `v_status` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tms_vehicle`
+-- Dumping data for table `tms_vehicles`
 --
 
-INSERT INTO `tms_vehicle` (`v_id`, `v_name`, `v_reg_no`, `v_pass_no`, `v_driver`, `v_category`, `v_dpic`, `v_status`) VALUES
+INSERT INTO `tms_vehicles` (`v_id`, `v_name`, `v_reg_no`, `v_pass_no`, `v_driver`, `v_category`, `v_dpic`, `v_status`) VALUES
 (9, 'Wave 100', 'JR-8281', '2', 'Some Thing', 'Motorcycle', '', 'Available'),
 (10, 'Wave', 'JP-2272', '2', 'Some Thing', 'Motorcycle', '', 'Available'),
 (11, 'Hyundai-1', 'URI-174', '18', 'Some Thing', 'Bus', '', 'Available'),
@@ -203,9 +202,9 @@ ALTER TABLE `tms_user`
   ADD PRIMARY KEY (`u_id`);
 
 --
--- Indexes for table `tms_vehicle`
+-- Indexes for table `tms_vehicles`
 --
-ALTER TABLE `tms_vehicle`
+ALTER TABLE `tms_vehicles`
   ADD PRIMARY KEY (`v_id`);
 
 --
@@ -243,9 +242,9 @@ ALTER TABLE `tms_user`
   MODIFY `u_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- AUTO_INCREMENT for table `tms_vehicle`
+-- AUTO_INCREMENT for table `tms_vehicles`
 --
-ALTER TABLE `tms_vehicle`
+ALTER TABLE `tms_vehicles`
   MODIFY `v_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 

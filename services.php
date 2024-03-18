@@ -23,7 +23,7 @@
     </ol>
 
     <!-- Image Header -->
-    <img class="img-fluid rounded mb-4" src="vendor/img/placeholder.png" alt="">
+    <img class="img-fluid rounded mb-4" src="vendor/Auxiliary Image/13.jpg" alt="">
 
     <!-- Marketing Icons Section -->
     <div class="row">
@@ -65,9 +65,6 @@
 
   </div>
   <!-- /.container -->
-
-  <!-- Footer -->
-  <?php include("vendor/inc/footer.php");?>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
